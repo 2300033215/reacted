@@ -9,8 +9,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ${{matrix.os}}
-    strategy: 
-    matrix:
+    strategy:
+      matrix:
         os: [ubuntu-latest, windows-latest]
 
     steps:
