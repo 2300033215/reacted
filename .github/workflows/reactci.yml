@@ -12,15 +12,16 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
+        node-versions: [ 18, 19, 20]
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Set up Node.jsadd .
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: ${{matrix.node-versions}}
 
       - name: npm ci
         run: npm ci
